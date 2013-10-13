@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div id="tabstrip-Settings" 
+             data-role="view"  
+             data-title="Login" 
+             data-model="app.loginService.viewModel">
+
+            <div class="view-content">
+                <div class="logo"></div>
+                <h3 data-bind="invisible: isLoggedIn">Enter your credentials:</h3>
+                <h1 class="welcome" data-bind="visible: isLoggedIn">
+                    Welcome, <span data-bind="text: username"></span>!
+                </h1>
+
+                <ul data-role="listview" data-style="inset" data-bind="invisible: isSubmited">
+                    <li>
+                        <label>
+                            Username
+                            <input type="text" data-bind="value: username"/>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Password
+                            <input type="password" data-bind="value: password" />
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="buttonArea">
+                    <a id="submit" data-role="button" data-bind="click: onSubmit, invisible: isSubmited" class="submit-button">Submit</a>
+                    
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
